@@ -18,13 +18,10 @@ try:
 
 except sqlite3.Error as error:
     pass
-   # print("Ошибка при подключении к sqlite", error)
+
 finally:
     pass
-    #if (sqlite_connection):
-        #sqlite_connection.close()
-       # print("Соединение с SQLite закрыто")
-
+   
 def main():
     print("\n\n")
     print("1) Ввести данные в таблицу")
@@ -51,7 +48,7 @@ def write_table():
 
     sqlite_insert_query = """INSERT INTO auth(age, first_name, last_name)  VALUES('{}','{}','{}')""".format(age, name, second_name)
 
-    count = cursor.execute(sqlite_insert_query)
+    cursor.execute(sqlite_insert_query)
     sqlite_connection.commit()
     return main()
 
